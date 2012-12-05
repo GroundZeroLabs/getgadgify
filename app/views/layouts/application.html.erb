@@ -1,14 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Getgadgify</title>
+
+  <!-- start: Meta -->
+  <meta charset="utf-8">
+  <title>Get Gadgify</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tags %>
+  <meta name="description" content="Generate resumes, cv, portfolio and personal sites"/>
+  <meta name="keywords" content="Resumes, CV, Portfolio, Personal, Site, Template, Theme, web, html5, css3, Bootstrap" />
+  <meta name="author" content="GroundZero-Labs"/>
+  <!-- end: Meta -->
+
+  <!-- start: Mobile Specific -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- end: Mobile Specific -->
+
+  <!-- start: Facebook Open Graph -->
+  <meta property="og:title" content=""/>
+  <meta property="og:description" content=""/>
+  <meta property="og:type" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content=""/>
+  <!-- end: Facebook Open Graph -->
+
+    <!-- start: FONTS -->
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Economica:700,400italic">
+  <!-- end: FONTS -->
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
 </head>
 <body>
 
-<%= yield %>
+  <!--start: Header -->
+  <header>
 
+    <!--start: Container -->
+    <div class="container">
+
+      <!--start: Row -->
+      <div class="row">
+
+        <!--start: Logo -->
+        <div class="logo span3">
+
+          <a class="brand" href="#"><%= image_tag "logo.png", alt: "logo" %></a>
+
+        </div>
+        <!--end: Logo -->
+
+        <!--start: Navigation -->
+        <div class="span9">
+
+          <div class="navbar navbar-inverse">
+              <div class="navbar-inner">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </a>
+                    <div class="nav-collapse collapse">
+                      <ul class="nav">
+                          <li class="<%='active' if controller?('welcome') && action?('index')%>"><%= link_to "Home", root_path %></li>
+                          <li class="<%='active' if controller?('welcome') && action?('started')%>"><%= link_to "Getting Started", "" %></li>
+                          <li class="<%='active' if controller?('welcome') && action?('folios')%>"><%= link_to "Folios", "" %></li>
+                          <li class="<%='active' if controller?('welcome') && action?('about')%>"><%= link_to "About", about_welcome_index_path %></li>
+                          <li class="<%='active' if controller?('welcome') && action?('login')%>"><%= link_to "Login", "" %></li>
+                      </ul>
+                    </div>
+                </div>
+              </div>
+
+        </div>
+        <!--end: Navigation -->
+
+      </div>
+      <!--end: Row -->
+
+    </div>
+    <!--end: Container-->
+
+  </header>
+  <!--end: Header-->
+
+  <%= yield :main_slider %>
+
+  <%= yield :feature_list %>
+
+  <%= yield %>
+
+  <%= render "shared/footer" %>
 </body>
 </html>

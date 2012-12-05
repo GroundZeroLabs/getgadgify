@@ -1,4 +1,4 @@
-getgadgify
+Getgadgify
 ==========
 
 Get Gadgify!

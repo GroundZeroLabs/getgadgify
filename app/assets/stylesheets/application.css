@@ -17,5 +17,6 @@
  *= require parallax-slider
  *= require social-icons
  *= require style
+ *= require common
  *= require_tree .
  */

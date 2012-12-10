@@ -9,3 +9,26 @@
     width: 216px !important;
   }
 }
+
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+
+  .content-container {
+    font-size: 14px;
+    .blog-label {
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 18px;
+    }
+
+    .blog_images {
+      padding-bottom: 10px;
+    }
+
+
+  }
+
+}

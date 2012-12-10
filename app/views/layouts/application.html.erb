@@ -53,7 +53,7 @@
         <!--start: Logo -->
         <div class="logo span3">
 
-          <a class="brand" href="#"><%= image_tag "logo.png", alt: "logo" %></a>
+          <%= link_to (image_tag "logo.png", alt: "logo"), root_path %></a>
 
         </div>
         <!--end: Logo -->
@@ -71,10 +71,7 @@
                     <div class="nav-collapse collapse">
                       <ul class="nav">
                           <li class="<%='active' if controller?('welcome') && action?('index')%>"><%= link_to "Home", root_path %></li>
-                          <li class="<%='active' if controller?('welcome') && action?('started')%>"><%= link_to "Getting Started", "" %></li>
-                          <li class="<%='active' if controller?('welcome') && action?('folios')%>"><%= link_to "Folios", "" %></li>
                           <li class="<%='active' if controller?('welcome') && action?('about')%>"><%= link_to "About", about_welcome_index_path %></li>
-                          <li class="<%='active' if controller?('welcome') && action?('login')%>"><%= link_to "Login", "" %></li>
                       </ul>
                     </div>
                 </div>
